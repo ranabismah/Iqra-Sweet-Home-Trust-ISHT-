@@ -3,19 +3,37 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #1a202c;  /* Example background color */
+  --foreground: #f7fafc;  /* Example foreground color */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ImageCarousel.css */
+
+.carousel-container {
+  @apply relative w-full h-screen overflow-hidden; /* Set the full height for the container */
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.carousel-images {
+  @apply flex transition-transform duration-700 ease-in-out;
+}
+
+.carousel-image {
+  @apply w-full h-full flex-shrink-0 relative;
+}
+
+.carousel-image-img {
+  /* Set the images to take up 80% of the container size, but maintain aspect ratio */
+  @apply w-[80%] h-[80%] object-cover mx-auto; /* Adjust size (80% of the container) */
+}
+
+.carousel-button {
+  @apply absolute top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-3 rounded-full hover:bg-opacity-70 transition duration-300;
+}
+
+.carousel-button.prev {
+  @apply left-4;
+}
+
+.carousel-button.next {
+  @apply right-4;
 }

@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
 
-export default {
+const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,10 +9,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: "#4F46E5", // Custom purple-blue color
+        secondary: "#EC4899", // Accent color for hover and buttons
+        background: "#f3f4f6", // Light background for a clean look
+        foreground: "#111827", // Dark text for contrast
       },
     },
   },
   plugins: [],
-} satisfies Config;
+};
+
+export default config;
+
+
+
